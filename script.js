@@ -46,6 +46,11 @@ function openCvReady() {
 
             cv.imshow("canvas_output", dst);
 
+            src.delete();
+            dst.delete();
+            gray.delete();
+            faces.delete();
+
             // Schedule frame berikutnya
             let delay = 1000 / FPS - (Date.now() - begin);
             setTimeout(processVideo, delay);
